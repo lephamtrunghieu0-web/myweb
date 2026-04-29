@@ -1,4 +1,5 @@
-<img width="1448" height="961" alt="image" src="https://github.com/user-attachments/assets/5e2b97a1-430e-4864-967f-f39e7a504c7e" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/c5027cae-650a-40bf-81a8-256b3680987b" />
+
 🌐 Website Cá Nhân
 📌 Giới thiệu
 
