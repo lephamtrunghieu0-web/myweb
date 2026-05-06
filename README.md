@@ -4,11 +4,11 @@
 ## 📌 Giới thiệu dự án
 Đây là sản phẩm Website Portfolio hoàn chỉnh, được xây dựng dựa trên bản thiết kế Wireframe tối giản. Mục tiêu của dự án là trình bày lộ trình học tập, các kỹ năng chuyên môn và danh sách sản phẩm thực tế trong quá trình học tập ngành Công nghệ Thông tin.
 ## 👤 Thông tin cá nhân
-* **Full Name:** Lê Phạm Trung Hiếu
+*** **Full Name:** Lê Phạm Trung Hiếu
 * **Major:** Công nghệ thông tin (Software Engineering & Networking)
 * **University:** Trường Cao Đẳng Kĩ Thuật Công Nghệ Nha Trang
 * **Mentor:** Thầy Trần Ngọc Minh
-* **Interests:** Lập trình Web, Game Modding (Minecraft), Mobile Tech.
+* **Interests:** Lập trình Web, Game Modding (Minecraft), Mobile Tech.**
 -------------------------------------------------------------------------------
 
 * ### 1. 🏠 Trang Chủ (Home)
