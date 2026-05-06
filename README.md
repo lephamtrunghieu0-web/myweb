@@ -18,7 +18,8 @@
     * 💻 **Lập trình:** Xây dựng hệ thống ổn định, hiệu năng cao.
     * 🚀 **Triển khai:** Vận hành và quản lý dự án đúng tiến độ.
 * **Dự án nổi bật:** Card giới thiệu các dự án quan trọng nhất với nút "Xem chi tiết".
-* <img width="345" height="1024" alt="image" src="https://github.com/user-attachments/assets/a6add837-701c-4f94-9330-94e2c4d61fd3" />
+  <img width="1024" height="321" alt="image" src="https://github.com/user-attachments/assets/a8a98b9f-c9dd-4613-95a5-f005cc6249ae" />
+
 --------------------------------------------------------------------------------
 
 ### 2. ✨ Giới Thiệu (About Me)
@@ -27,13 +28,15 @@
     * 🛠 **Frontend:** HTML5, CSS3, JavaScript, React.js.
     * ⚙️ **Backend:** C, Python, Node.js.
     * 📊 **Algorithm:** Nắm vững cấu trúc dữ liệu và giải thuật (Sorting, Linked List).
-    * <img width="289" height="1024" alt="image" src="https://github.com/user-attachments/assets/8937781c-8ff0-4352-9e35-2967260ce126" />
+   <img width="1024" height="321" alt="image" src="https://github.com/user-attachments/assets/869acb72-4965-48ca-a225-522ee6e1d6ac" />
+
 ----------------------------------------------------------------------------------------
 
     ### 3. 📁 Danh mục Dự án (Projects)
 * **Chức năng lọc:** Phân loại theo thẻ: **Tất cả**, **Web**, **Mobile**, **UI/UX**.
 * **Layout:** Hệ thống Grid hiển thị ảnh đại diện dự án, năm thực hiện và công nghệ chính.
-* <img width="277" height="1024" alt="image" src="https://github.com/user-attachments/assets/4737eb45-9695-4ad2-be97-0af746ffab91" />
+<img width="1024" height="321" alt="image" src="https://github.com/user-attachments/assets/fc8e12d8-6f56-4064-b6d5-4bf5dcab6c87" />
+
 -------------------------------------------------------------------------------------------
 
 ### 4. 🔍 Chi tiết dự án (Project Detail)
@@ -50,7 +53,8 @@
     * 📍 **Địa chỉ:** Nha Trang , Việt Nam
 * **Kết nối:** Tích hợp liên kết mạng xã hội (Facebook, GitHub, LinkedIn).
 * **Interactive:** Form gửi lời nhắn và bản đồ định vị vị trí.
-* <img width="319" height="1011" alt="image" src="https://github.com/user-attachments/assets/99c62e5b-7bf1-4030-ac15-824b0ae77d0c" />
+<img width="1024" height="321" alt="image" src="https://github.com/user-attachments/assets/07e23615-33e6-46d3-a7e6-28972d6a752e" />
+
 -------------------------------------------------------------------------------------------
 ________________________________________________________________
 
