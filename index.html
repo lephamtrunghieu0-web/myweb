@@ -3,263 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lê Phạm Trung Hiếu | MyWeb - Phiên bản Hoàn chỉnh & Hiệu ứng</title>
-    <style>
-        /* --- 1. CẤU HÌNH BIẾN & CƠ BẢN (COLORS & BASIC) --- */
-        :root {
-            --primary-color: #2ecc71; /* Xanh lá năng động - Tinh thần thể thao */
-            --dark-color: #1a1a1a;    /* Nền tối sâu */
-            --nav-bg: #1f1f1f;        /* Nền thanh Nav */
-            --card-bg: #252525;       /* Nền thẻ nội dung */
-            --text-color: #e0e0e0;
-            --light-color: #ecf0f1;
-            --section-gap: 60px;
-        }
+    <title>Lê Phạm Trung Hiếu | MyWeb</title>
 
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            margin: 0; 
-            color: var(--text-color); 
-            background: var(--dark-color);
-            overflow-x: hidden; /* Tránh thanh cuộn ngang */
-        }
-
-        html {
-            scroll-behavior: smooth; /* Cuộn mượt khi bấm link */
-        }
-
-        /* --- 2. THANH NAV RESPONSIVE (THEO HÌNH VẼ) & HIỆU ỨNG MỞ --- */
-        .navbar {
-            background-color: var(--nav-bg);
-            height: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 50px;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            border-bottom: 2px solid var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .logo {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .logo:hover { transform: scale(1.05); }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links {
-            color: var(--light-color);
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        /* Hiệu ứng gạch dưới khi hover */
-        .nav-links::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background-color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-        .nav-links:hover::after {
-            width: 80%;
-            left: 10%;
-        }
-        .nav-links:hover { color: var(--primary-color); }
-
-        /* --- 3. MÀN HÌNH MỞ ĐẦU (HEADER) & HIỆU ỨNG ĐÁNH MÁY --- */
-        header { 
-            background: linear-gradient(135deg, #1f1f1f 0%, #2c3e50 100%);
-            color: white; 
-            padding: 120px 20px; 
-            text-align: center; 
-            position: relative;
-        }
-        
-        header h1 { 
-            margin: 0; 
-            font-size: 3.5em; 
-            color: var(--primary-color); 
-            display: inline-block;
-            overflow: hidden; /* Giữ chữ trong khung */
-            border-right: .15em solid var(--primary-color); /* Thanh con trỏ */
-            white-space: nowrap; /* Không xuống dòng */
-            letter-spacing: .1em;
-            /* Animation đánh máy: steps() chia nhỏ chuyển động */
-            animation: 
-                typing 3.5s steps(30, end),
-                blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary-color); }
-        }
-
-        header p { font-size: 1.3em; opacity: 0; animation: fadeIn 1s ease 3.5s forwards; }
-
-        /* --- 4. BỐ CỤC NỘI DUNG & HIỆU ỨNG CUỘN TRANG (SCROLL REVEAL) --- */
-        .container { 
-            max-width: 1000px; 
-            margin: 20px auto; 
-            padding: 20px; 
-        }
-
-        section { 
-            margin-bottom: var(--section-gap); 
-            opacity: 0; /* Mặc định ẩn */
-            transform: translateY(60px); /* Đẩy xuống */
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        section.active { 
-            opacity: 1; /* Hiện ra */
-            transform: translateY(0); /* Về vị trí cũ */
-        }
-
-        h2 { 
-            border-bottom: 3px solid var(--primary-color); 
-            display: inline-block; 
-            padding-bottom: 8px; 
-            color: var(--primary-color); 
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
-
-        /* --- 5. TƯƠNG TÁC THẺ 3D (HOVER TILT) TRONG LƯỚI KỸ NĂNG --- */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
-            perspective: 1200px; /* Cần thiết cho hiệu ứng 3D */
-        }
-
-        .card { 
-            background: var(--card-bg);
-            padding: 25px; 
-            border: 1px solid #333; 
-            border-radius: 10px; 
-            transition: transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-        }
-
-        .card:hover { 
-            border-color: var(--primary-color); 
-            box-shadow: 0 12px 25px rgba(46, 204, 113, 0.25);
-            /* Transform 3D được JavaScript điều khiển */
-        }
-
-        .card h3 { color: var(--light-color); margin-top: 0; font-size: 1.4rem;}
-
-        /* Phong cách cho danh sách Sở thích */
-        ul { list-style: none; padding: 0; }
-        li { 
-            margin-bottom: 15px; 
-            padding: 12px; 
-            background: rgba(46, 204, 113, 0.1); 
-            border-radius: 8px; 
-            transition: background 0.3s ease, transform 0.3s ease; 
-        }
-        li:hover { 
-            background: rgba(46, 204, 113, 0.2); 
-            transform: translateX(10px); /* Đẩy sang phải nhẹ */
-        }
-        li::before { content: "⚽ "; color: var(--primary-color); font-weight: bold;}
-
-        /* --- 6. PHẦN CHÂN TRANG (FOOTER) --- */
-        .footer { text-align: center; padding: 50px 20px; color: #777; font-size: 0.9em; background: #1f1f1f; margin-top: 60px; border-top: 1px solid #333;}
-        .footer p { margin: 5px 0; }
-        .footer-logo { color: var(--primary-color); font-weight: bold; font-size: 1.2rem;}
-
-        /* --- 7. BỔ SUNG ANIMATION & MEDIA QUERIES ĐỂ TƯƠNG THÍCH MOBILE --- */
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Điều chỉnh cho màn hình Mobile */
-        @media screen and (max-width: 768px) {
-            header h1 { font-size: 2.2em; white-space: normal; letter-spacing: normal; animation: fadeIn 1.5s ease; border: none;}
-            header { padding: 80px 20px; }
-            .navbar { padding: 0 20px; height: 70px;}
-            .logo { font-size: 1.4rem; }
-
-            /* Ẩn Menu Nav và thiết lập trượt (theo hình vẽ) */
-            .nav-menu {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                border-top: 1px solid #333;
-                position: absolute;
-                top: 70px; /* Chiều cao Nav */
-                left: 0;
-                opacity: 0;
-                pointer-events: none; /* Tránh click khi menu ẩn */
-                transform: translateY(-20px); /* Ẩn phía trên */
-                transition: opacity 0.5s ease, transform 0.5s ease;
-                background: var(--nav-bg);
-            }
-
-            .nav-menu.active {
-                opacity: 1;
-                pointer-events: all;
-                transform: translateY(0); /* Trượt xuống */
-            }
-
-            .nav-menu li { width: 100%; text-align: center; }
-            
-            .nav-links {
-                display: block;
-                padding: 1.8rem;
-                width: 100%;
-                font-size: 1.1rem;
-            }
-
-            /* Tạo hình Hamburger cho Mobile */
-            .menu-toggle { cursor: pointer; display: block; }
-            .bar {
-                display: block;
-                width: 25px;
-                height: 3px;
-                margin: 5px auto;
-                transition: all 0.3s ease-in-out;
-                background: white;
-            }
-
-            /* Hiệu ứng biến Hamburger thành dấu X */
-            #mobile-menu.is-active .bar:nth-child(2) { opacity: 0; }
-            #mobile-menu.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--primary-color); }
-            #mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--primary-color); }
-        }
-
-        /* Mặc định ẩn nút Hamburger trên PC */
-        @media screen and (min-width: 769px) {
-            .menu-toggle { display: none; }
-        }
-    </style>
+    <!-- Gọi file CSS ngoài -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -287,7 +34,11 @@
 <div class="container">
     <section id="about" class="scroll-section">
         <h2>Giới thiệu bản thân</h2>
-        <p>Chào bạn! Mình là Hiếu, hiện đang học tại trường Cao đẳng CNTT. Mình là một người đam mê khám phá công nghệ, đặc biệt yêu thích tìm hiểu về phần cứng di động và các ngôn ngữ lập trình cơ bản. Mục tiêu của mình là trở thành một lập trình viên Mobile chuyên nghiệp.</p>
+        <p>
+            Chào bạn! Mình là Hiếu, hiện đang học tại trường Cao đẳng CNTT.
+            Mình đam mê công nghệ, đặc biệt là phần cứng di động và lập trình.
+            Mục tiêu là trở thành lập trình viên Mobile chuyên nghiệp.
+        </p>
     </section>
 
     <section id="skills" class="scroll-section">
@@ -295,13 +46,14 @@
         <div class="grid">
             <div class="card tilt-card">
                 <h3>Lập trình</h3>
-                <p>Nền tảng: C, Python.</p>
-                <p>Web: HTML/CSS (Đang học và áp dụng các hiệu ứng nâng cao như animation, interactive).</p>
+                <p>C, Python</p>
+                <p>HTML/CSS nâng cao</p>
             </div>
+
             <div class="card tilt-card">
                 <h3>Công nghệ</h3>
-                <p>Khám phá: Benchmark phần cứng (Geekbench, AnTuTu).</p>
-                <p>Công cụ: Quản lý mã nguồn với GitHub.</p>
+                <p>Benchmark phần cứng</p>
+                <p>GitHub</p>
             </div>
         </div>
     </section>
@@ -309,83 +61,61 @@
     <section id="hobbies" class="scroll-section">
         <h2>Đam mê & Sở thích</h2>
         <ul>
-            <li>Bóng đá - Niềm đam mê thể thao lớn nhất.</li>
-            <li>Công nghệ di động - Theo dõi các dòng flagships mới từ Xiaomi, Vivo.</li>
-            <li>Chiến thuật - Yêu thích Yu-Gi-Oh!, Minecraft.</li>
+            <li>Bóng đá</li>
+            <li>Công nghệ di động</li>
+            <li>Yu-Gi-Oh!, Minecraft</li>
         </ul>
     </section>
 </div>
 
 <div class="footer">
     <p class="footer-logo">Lê Phạm Trung Hiếu</p>
-    <p>© 2026 | Designed with passion for Project MyWeb - HK1</p>
-    <p>Trường Cao đẳng CNTT</p>
+    <p>© 2026 | Project MyWeb</p>
 </div>
 
 <script>
-    /* --- I. Hiệu ứng Cuộn Trang xuất hiện dần (Scroll Reveal) --- */
+    // Scroll animation
     function revealSections() {
         const sections = document.querySelectorAll('.scroll-section');
-        const triggerBottom = window.innerHeight / 5 * 4; // Kích hoạt khi cuộn đến 4/5 màn hình
+        const triggerBottom = window.innerHeight / 5 * 4;
 
         sections.forEach(section => {
             const sectionTop = section.getBoundingClientRect().top;
-
             if (sectionTop < triggerBottom) {
                 section.classList.add('active');
             } else {
-                section.classList.remove('active'); // Ẩn lại khi cuộn ngược lên
+                section.classList.remove('active');
             }
         });
     }
 
-    // Chạy khi cuộn trang và khi tải trang lần đầu
     window.addEventListener('scroll', revealSections);
     window.addEventListener('load', revealSections);
 
-
-    /* --- II. Hiệu ứng Tương tác thẻ 3D (Hover Tilt) --- */
+    // Tilt card
     const cards = document.querySelectorAll('.tilt-card');
-
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
-            const cardRect = card.getBoundingClientRect();
-            const cardWidth = cardRect.width;
-            const cardHeight = cardRect.height;
-            const centerX = cardRect.left + cardWidth / 2;
-            const centerY = cardRect.top + cardHeight / 2;
-            
-            const mouseX = e.clientX - centerX;
-            const mouseY = e.clientY - centerY;
-            
-            // Xoay thẻ theo góc chuột, giới hạn 10 độ
-            const rotateX = (-mouseY / (cardHeight / 2)) * 10;
-            const rotateY = (mouseX / (cardWidth / 2)) * 10;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
 
-            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            card.style.transform = `rotateX(${(-y/20)}deg) rotateY(${(x/20)}deg)`;
         });
 
-        // Đặt lại vị trí khi di chuột ra ngoài
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            card.style.transform = 'rotate(0)';
         });
     });
 
-    /* --- III. Script cho Mobile Menu (Hiệu ứng mở menu và icon X) --- */
+    // Mobile menu
     const menu = document.querySelector('#mobile-menu');
     const menuLinks = document.querySelector('.nav-menu');
 
-    // Mở/Đóng menu khi nhấn icon Hamburger
     menu.addEventListener('click', function() {
-        this.classList.toggle('is-active'); // Hiệu ứng biến Hamburger thành X
-        menuLinks.classList.toggle('active'); // Hiệu ứng trượt menu ra/vào
+        this.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
     });
-
-    // Tự động đóng menu khi bấm vào một mục links
-    document.querySelectorAll('.nav-links').forEach(n => n.addEventListener('click', () => {
-        menu.classList.remove('is-active');
-        menuLinks.classList.remove('active');
-    }));
 </script>
 
 </body>
