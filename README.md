@@ -62,7 +62,7 @@ ________________________________________________________________
 ## 🛠 Công nghệ & Công cụ sử dụng
 * **Languages:** `C`, `Python`, `JavaScript`, `HTML/CSS`
 * **Tools:** `VS Code`, `GitHub Desktop`, `TLauncher` (Dùng cho dự án Modding)
-* **Design:** `Figma` / `Wireframe Pro` / canva '
+* **Design:** canva 
 
 ---
 
