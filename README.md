@@ -43,7 +43,8 @@
 * **Bản phân tích:** Trình bày rõ ràng bài toán, giải pháp kỹ thuật và tính năng nổi bật.
 * **Hình ảnh thực tế:** Slide trình chiếu các ảnh chụp màn hình dự án.
 * **Call to action:** Cung cấp link trực tiếp để **Xem Demo** hoặc truy cập **Source Code**.
-* <img width="312" height="1024" alt="image" src="https://github.com/user-attachments/assets/1b4a5815-7677-4b6c-9d5d-7a8be3cbc7c8" />
+<img width="1024" height="321" alt="image" src="https://github.com/user-attachments/assets/a2be83e4-b615-4974-9e18-7799de510672" />
+
 ------------------------------------------------------------------------------------------
 
 ### 5. 📩 Liên hệ (Contact)
