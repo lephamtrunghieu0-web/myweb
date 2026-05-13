@@ -32,7 +32,7 @@
 
 ----------------------------------------------------------------------------------------
 
-    ### 3. 📁 Danh mục dự án 
+### 3. 📁 Danh mục dự án 
 * **Chức năng lọc:** Phân loại theo thẻ: **Tất cả**, **Web**, **Mobile**, **UI/UX**.
 * **Layout:** Hệ thống Grid hiển thị ảnh đại diện dự án, năm thực hiện và công nghệ chính.
 <img width="1024" height="321" alt="image" src="https://github.com/user-attachments/assets/fc8e12d8-6f56-4064-b6d5-4bf5dcab6c87" />
