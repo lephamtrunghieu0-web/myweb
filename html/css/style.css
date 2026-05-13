@@ -1,0 +1,287 @@
+/* --- 1. RESET & CẤU HÌNH CHUNG --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 60px; /* Chừa chỗ cho footer fixed */
+}
+
+/* --- 2. HEADER & NAVIGATION (Dùng chung cho các trang) --- */
+header {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a.active, nav a:hover {
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+}
+
+.home-icon {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* --- 3. CÁC THÀNH PHẦN UI CƠ BẢN (Nút, Thẻ) --- */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-dark {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* --- 4. CSS CHO TRANG CHỦ (Home) --- */
+.intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 50px 0;
+}
+
+.profile-pic img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* --- 5. CSS CHO TRANG GIỚI THIỆU (About) --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background: #eee;
+    margin: 0 10px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar .fill {
+    height: 100%;
+    background: #000;
+}
+
+.timeline {
+    border-left: 2px solid #000;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+}
+
+/* --- 6. CSS CHO TRANG DỰ ÁN (Projects) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.project-card .card-thumb {
+    height: 130px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-filter {
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: none;
+    cursor: pointer;
+}
+
+.btn-filter.active {
+    background: #000;
+    color: #fff;
+}
+
+/* --- 7. CSS CHO TRANG LIÊN HỆ (Contact) --- */
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.info-box {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.input-group input, .input-group textarea {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.map-section {
+    width: 100%;
+    height: 200px;
+    background: #eee;
+    margin-top: 30px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* --- 8. FOOTER (Dùng chung) --- */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+/* --- 9. RESPONSIVE (Dành cho Mobile) --- */
+@media (max-width: 768px) {
+    .container, .main-content, .contact-wrapper, .intro-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        position: static;
+        transform: none;
+    }
+    
+    footer {
+        position: relative;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
