@@ -1,127 +1,62 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Cá Nhân - Hoàn Chỉnh</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body style="margin: 0; font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000; overflow-x: hidden;">
+</p>
 
-    <nav style="position: sticky; top: 0; background: white; display: flex; justify-content: center; align-items: center; padding: 20px 0; border-bottom: 1px solid #eee; z-index: 1000;">
-        <div style="display: flex; align-items: center; gap: 30px;">
-            <span onclick="showPage('home')" style="cursor: pointer; font-size: 20px;">🏠</span>
-            <span onclick="showPage('home')" class="nav-item" style="cursor: pointer; font-weight: 600; border-bottom: 2px solid black; padding-bottom: 5px;">Home</span>
-            <span onclick="showPage('about')" class="nav-item" style="cursor: pointer; color: #666;">Giới thiệu</span>
-            <span onclick="showPage('projects')" class="nav-item" style="cursor: pointer; color: #666;">Dự án</span>
-            <span onclick="showPage('contact')" class="nav-item" style="cursor: pointer; color: #666;">Liên hệ</span>
+            </div>
+
+            <div class="card hidden">
+
+                <h2>HÌNH ẢNH DỰ ÁN</h2>
+
+                <div class="slider">
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                    <div class="slide"></div>
+                </div>
+
+                <div class="button-group">
+
+                    <a href="#" class="btn btn-dark">
+                        DEMO
+                    </a>
+
+                    <a href="#" class="btn btn-light">
+                        SOURCE CODE
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
-    </nav>
 
-    <main style="min-height: 80vh; position: relative;">
+    </div>
 
-        <section id="home" class="page" style="padding: 80px 10%; display: flex; align-items: center; transition: 0.5s opacity;">
-            <div style="flex: 1; animation: slideInLeft 0.8s ease-out;">
-                <h1 style="font-size: 3.5rem; margin: 0;">Xin chào! 👋</h1>
-                <p style="font-size: 1.2rem; margin: 20px 0; color: #333;">Rất vui được gặp bạn. Cảm ơn bạn đã ghé thăm trang cá nhân của tôi.</p>
-                <div style="display: flex; gap: 15px;">
-                    <button onclick="showPage('projects')" style="background: black; color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">XEM DỰ ÁN →</button>
-                    <button onclick="showPage('contact')" style="background: white; color: black; border: 1px solid #ddd; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-weight: bold;">LIÊN HỆ TÔI</button>
-                </div>
-            </div>
-            <div style="flex: 1; display: flex; justify-content: center; animation: fadeIn 1.2s ease-in;">
-                <div style="width: 320px; height: 320px; background: #e0e0e0; border-radius: 50%; border: 10px solid #f0f0f0; overflow: hidden;">
-                    <img src="https://via.placeholder.com/320" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-            </div>
-        </section>
+</section>
 
-        <section id="about" class="page" style="display: none; padding: 60px 10%; opacity: 0; transition: 0.5s opacity;">
-            <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">GIỚI THIỆU</h1>
-            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 300px; border: 1px solid #eee; padding: 30px; border-radius: 15px;">
-                    <h3 style="border-bottom: 2px solid #000; display: inline-block;">KỸ NĂNG</h3>
-                    <div style="margin-top: 20px;">
-                        <p>HTML / CSS - 90%</p>
-                        <div style="width: 100%; background: #eee; height: 8px; border-radius: 4px;"><div style="width: 90%; background: #000; height: 100%; border-radius: 4px;"></div></div>
-                        <p>JavaScript - 85%</p>
-                        <div style="width: 100%; background: #eee; height: 8px; border-radius: 4px;"><div style="width: 85%; background: #000; height: 100%; border-radius: 4px;"></div></div>
-                    </div>
-                </div>
-                <div style="flex: 1; min-width: 300px; border: 1px solid #eee; padding: 30px; border-radius: 15px;">
-                    <h3 style="border-bottom: 2px solid #000; display: inline-block;">KINH NGHIỆM</h3>
-                    <div style="margin-top: 20px; border-left: 2px solid #eee; padding-left: 20px;">
-                        <p><strong>2022 - Nay</strong><br>Senior Developer tại ABC</p>
-                        <p><strong>2020 - 2022</strong><br>Front-end Developer tại XYZ</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<footer>
+    © 2024 - All rights reserved
+</footer>
 
-        <section id="projects" class="page" style="display: none; padding: 60px 5%; opacity: 0;">
-            <h1 style="text-align: center; margin-bottom: 40px;">DỰ ÁN CỦA TÔI</h1>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
-                <div onclick="showPage('project-detail')" style="cursor: pointer; border: 1px solid #eee; border-radius: 10px; overflow: hidden; transition: 0.3s;" onmouseover="this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='none'">
-                    <div style="height: 150px; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">🖼️</div>
-                    <div style="padding: 15px;">
-                        <h4 style="margin: 0;">Tên dự án</h4>
-                        <p style="font-size: 12px; color: #888;">Web • 2024</p>
-                    </div>
-                </div>
-                </div>
-        </section>
+<script>
 
-        <section id="contact" class="page" style="display: none; padding: 60px 10%; opacity: 0;">
-            <h1 style="text-align: center; margin-bottom: 40px;">LIÊN HỆ</h1>
-            <div style="display: flex; gap: 50px;">
-                <div style="flex: 1;">
-                    <h3>Thông tin liên hệ</h3>
-                    <p>📧lephamtrunghieu0@gmail.com
-                    <p>📞 +0935856882
-                    <p>📍 Nha Trang, Khánh Hòa, Việt Nam</p>
-                </div>
-                <div style="flex: 1;">
-                    <input type="text" placeholder="Họ và tên" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
-                    <textarea placeholder="Nội dung tin nhắn" style="width: 100%; padding: 12px; height: 100px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
-                    <button style="width: 100%; background: black; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">GỬI TIN NHẮN</button>
-                </div>
-            </div>
-        </section>
+const observer = new IntersectionObserver((entries)=>{
 
-    </main>
+    entries.forEach((entry)=>{
 
-    <footer style="background: black; color: white; padding: 30px; text-align: center; margin-top: 50px;">
-        <p>© 2024 • All rights reserved</p>
-        <div style="font-size: 20px; word-spacing: 20px;">f g in</div>
-    </footer>
-
-    <script>
-        // Hàm chuyển trang mượt mà
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
-                page.style.display = 'none';
-                page.style.opacity = '0';
-            });
-
-            const activePage = document.getElementById(pageId);
-            activePage.style.display = 'block';
-            setTimeout(() => {
-                activePage.style.opacity = '1';
-                activePage.style.transform = 'translateY(0)';
-            }, 50);
-
-            // Cập nhật Menu
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => {
-                item.style.color = '#666';
-                item.style.borderBottom = 'none';
-            });
-            // (Tùy chỉnh thêm logic highlight menu nếu cần)
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
         }
 
-        // Tạo style animation thủ công
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes slideInLeft {
-                from { opacity: 0; transform: translateX(-50px);
+    });
+
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+
+hiddenElements.forEach((el)=>{
+    observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
