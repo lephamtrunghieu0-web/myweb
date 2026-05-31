@@ -1,199 +1,510 @@
-/* --- 1. CẤU HÌNH GIAO DIỆN CHUNG --- */
-:root {
-    --primary: #000000;
-    --secondary: #ffffff;
-    --gray-bg: #f9f9f9;
-    --text-muted: #666666;
-    --border: #eeeeee;
-    /* Hiệu ứng chuyển cảnh mượt mà hơn */
-    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lê Phạm Trung Hiếu</title>
+</head>
+<body>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <header id="main-header">
+        <table width="100%" border="0" cellspacing="0" cellpadding="15">
+            <tr>
+                <td align="center">
+                    <font size="6"><b>PORTFOLIO TRUNG HIẾU</b></font>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table border="0" cellspacing="0" cellpadding="10">
+                        <tr>
+                            <td><a href="#" onclick="switchTab('trang-chu'); return false;"><font color="black" size="4"><b>🏠 Home</b></font></a></td>
+                            <td><a href="#" onclick="switchTab('gioi-thieu'); return false;"><font color="black" size="4"><b>Giới thiệu</b></font></a></td>
+                            <td><a href="#" onclick="switchTab('du-an'); return false;"><font color="black" size="4"><b>Dự án</b></font></a></td>
+                            <td><a href="#" onclick="switchTab('lien-he'); return false;"><font color="black" size="4"><b>Liên hệ</b></font></a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </header>
 
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: var(--primary);
-    background: var(--secondary);
-    overflow-x: hidden;
-}
+    <div id="content-container">
 
-/* Hiệu ứng hiện dần khi load trang */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        <div id="tab-trang-chu" class="portfolio-tab">
+            <h1 align="center">TRANG CHỦ</h1>
+            <table width="100%" border="0" cellspacing="20" cellpadding="0">
+                <tr valign="top">
+                    <td width="35%">
+                        <table width="100%" border="0" cellpadding="10" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <h2>Xin chào! 👋</h2>
+                                    <p><b>Rất vui được gặp bạn.</b></p>
+                                    <p>Cảm ơn bạn đã ghé thăm trang cá nhân của tôi.</p>
+                                    <br>
+                                    <table border="0" cellspacing="5">
+                                        <tr>
+                                            <td bgcolor="black" id="btn-view-project" onclick="switchTab('du-an')">
+                                                <font color="white">&nbsp;&nbsp;<b>XEM DỰ ÁN →</b>&nbsp;&nbsp;</font>
+                                            </td>
+                                            <td bgcolor="white" id="btn-contact-me" onclick="switchTab('lien-he')">
+                                                <font color="black">&nbsp;&nbsp;<b>LIÊN HỆ TÔI</b>&nbsp;&nbsp;</font>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td align="right">
+                                    <img src="https://via.placeholder.com/150" id="avatar-home" width="150" height="150" alt="Avatar">
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <h3>DỊCH VỤ CỦA TÔI</h3>
+                        <table width="100%" border="0" cellspacing="10" cellpadding="15">
+                            <tr>
+                                <td class="service-card" align="center" width="33%">
+                                    <font size="5">✏️</font><br><b>Thiết kế</b><br><font size="2" color="gray">Giao diện đẹp, tối ưu trải nghiệm.</font>
+                                </td>
+                                <td class="service-card" align="center" width="33%">
+                                    <font size="5">&lt;/&gt;</font><br><b>Lập trình</b><br><font size="2" color="gray">Chuẩn hiệu quả, bảo mật cao.</font>
+                                </td>
+                                <td class="service-card" align="center" width="33%">
+                                    <font size="5">🚀</font><br><b>Triển khai</b><br><font size="2" color="gray">Bàn giao đúng thời gian.</font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
 
-section {
-    animation: fadeInUp 0.8s ease-out forwards;
-}
+                    <td width="65%" class="feature-box">
+                        <h3>DỰ ÁN NỔI BẬT</h3>
+                        <table width="100%" border="0" cellspacing="10" cellpadding="10">
+                            <tr valign="middle">
+                                <td width="40%">
+                                    <img src="https://via.placeholder.com/250x180" id="img-feature" width="100%" alt="Featured Project">
+                                </td>
+                                <td>
+                                    <h4>Featured Project</h4>
+                                    <p><font color="gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</font></p>
+                                    <table border="0" cellspacing="0" cellpadding="8">
+                                        <tr>
+                                            <td bgcolor="white" id="btn-detail-trigger" onclick="switchTab('chi-tiet-du-an')">
+                                                <font color="black"><b>XEM CHI TIẾT →</b></font>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr color="#eee" size="1">
+                        <table width="100%" border="0" cellspacing="5" cellpadding="5">
+                            <tr>
+                                <td>📧 email@gmail.com</td>
+                                <td>📞 +123 555 5899</td>
+                                <td>📍 Nha Trang, Việt Nam</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-/* --- 2. THANH ĐIỀU HƯỚNG CÓ HIỆU ỨNG --- */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
-    z-index: 1000;
-}
+        <div id="tab-gioi-thieu" class="portfolio-tab">
+            <h1 align="center">GIỚI THIỆU</h1>
+            <table width="100%" border="0" cellspacing="15" cellpadding="0">
+                <tr valign="top">
+                    <td width="35%" class="info-card">
+                        <table width="100%" border="0" cellpadding="15">
+                            <tr>
+                                <td align="center">
+                                    <img src="https://via.placeholder.com/130" id="avatar-about" width="130" height="130"><br><br>
+                                    <h3>Full Stack Developer</h3>
+                                    <p align="left"><font color="#555">Tôi là một lập trình viên đam mê công nghệ và yêu thích việc xây dựng các sản phẩm số hữu ích cho người dùng.</font></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
 
-.nav-item {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-size: 14px;
-    position: relative;
-    transition: var(--transition-smooth);
-}
+                    <td width="30%" class="info-card">
+                        <h3 align="center">KỸ NĂNG</h3>
+                        <table width="100%" border="0" cellpadding="8" cellspacing="0">
+                            <tr>
+                                <td><b>HTML / CSS</b></td>
+                                <td align="right">90%</td>
+                            </tr>
+                            <tr><td colspan="2"><table width="100%" bgcolor="#eee" cellspacing="0" cellpadding="0"><tr><td width="90%" bgcolor="black" height="6"></td><td></td></tr></table></td></tr>
+                            
+                            <tr>
+                                <td><b>JavaScript</b></td>
+                                <td align="right">85%</td>
+                            </tr>
+                            <tr><td colspan="2"><table width="100%" bgcolor="#eee" cellspacing="0" cellpadding="0"><tr><td width="85%" bgcolor="black" height="6"></td><td></td></tr></table></td></tr>
+                            
+                            <tr>
+                                <td><b>React / Next.js</b></td>
+                                <td align="right">90%</td>
+                            </tr>
+                            <tr><td colspan="2"><table width="100%" bgcolor="#eee" cellspacing="0" cellpadding="0"><tr><td width="90%" bgcolor="black" height="6"></td><td></td></tr></table></td></tr>
+                            
+                            <tr>
+                                <td><b>Node.js</b></td>
+                                <td align="right">80%</td>
+                            </tr>
+                            <tr><td colspan="2"><table width="100%" bgcolor="#eee" cellspacing="0" cellpadding="0"><tr><td width="80%" bgcolor="black" height="6"></td><td></td></tr></table></td></tr>
+                        </table>
+                    </td>
 
-/* Hiệu ứng gạch chân chạy từ giữa sang hai bên */
-.nav-item::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 50%;
-    background-color: var(--primary);
-    transition: var(--transition-smooth);
-    transform: translateX(-50%);
-}
+                    <td width="35%" class="info-card">
+                        <h3>KINH NGHIỆM</h3>
+                        <table width="100%" border="0" cellpadding="5" cellspacing="5">
+                            <tr valign="top">
+                                <td>•</td>
+                                <td>
+                                    <b>2022 - Nay: Senior Developer</b><br>
+                                    <font size="2" color="gray">Công ty ABC - Phát triển ứng dụng web, tối ưu hiệu năng.</font>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>•</td>
+                                <td>
+                                    <b>2020 - 2022: Front-end Developer</b><br>
+                                    <font size="2" color="gray">Công ty XYZ - Xây dựng giao diện và tích hợp API.</font>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>•</td>
+                                <td>
+                                    <b>2019 - 2020: Developer Intern</b><br>
+                                    <font size="2" color="gray">Công ty DEF - Học hỏi và tham gia dự án.</font>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr color="#eee">
+                        <p size="2">📞 +123 456 789<br>📧 user@example.com</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-.nav-item:hover::after, .nav-item.active::after {
-    width: 100%;
-}
+        <div id="tab-du-an" class="portfolio-tab">
+            <h1 align="center">DỰ ÁN CỦA TÔI</h1>
+            
+            <p align="center">
+                <input type="button" value="Tất cả" id="filter-btn">&nbsp;
+                <input type="button" value="Web" id="filter-btn">&nbsp;
+                <input type="button" value="Mobile" id="filter-btn">&nbsp;
+                <input type="button" value="UI/UX" id="filter-btn">
+            </p>
 
-.nav-item:hover {
-    color: var(--primary);
-}
+            <table width="100%" border="0" cellspacing="12" cellpadding="0" id="grid-projects">
+                <tr>
+                    <td width="25%" class="project-item" onclick="switchTab('chi-tiet-du-an')">
+                        <img src="https://via.placeholder.com/200x120" width="100%"><br>
+                        <b>Tên dự án 1</b><br><font size="2" color="gray">Web • 2026<br>Mô tả ngắn về công nghệ sử dụng.</font>
+                    </td>
+                    <td width="25%" class="project-item" onclick="switchTab('chi-tiet-du-an')">
+                        <img src="https://via.placeholder.com/200x120" width="100%"><br>
+                        <b>Tên dự án 2</b><br><font size="2" color="gray">Web • 2026<br>Mô tả ngắn về công nghệ sử dụng.</font>
+                    </td>
+                    <td width="25%" class="project-item" onclick="switchTab('chi-tiet-du-an')">
+                        <img src="https://via.placeholder.com/200x120" width="100%"><br>
+                        <b>Tên dự án 3</b><br><font size="2" color="gray">Web • 2026<br>Mô tả ngắn về công nghệ sử dụng.</font>
+                    </td>
+                    <td width="25%" class="project-item" onclick="switchTab('chi-tiet-du-an')">
+                        <img src="https://via.placeholder.com/200x120" width="100%"><br>
+                        <b>Tên dự án 4</b><br><font size="2" color="gray">Web • 2026<br>Mô tả ngắn về công nghệ sử dụng.</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 5</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 6</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 7</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 8</b><br><font size="2" color="gray">Web • 2026</font></td>
+                </tr>
+                <tr>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 9</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 10</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 11</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 12</b><br><font size="2" color="gray">Web • 2026</font></td>
+                </tr>
+                <tr>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 13</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 14</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 15</b><br><font size="2" color="gray">Web • 2026</font></td>
+                    <td class="project-item" onclick="switchTab('chi-tiet-du-an')"><img src="https://via.placeholder.com/200x120" width="100%"><br><b>Tên dự án 16</b><br><font size="2" color="gray">Web • 2026</font></td>
+                </tr>
+            </table>
+            
+            <br>
+            <p align="center">
+                <input type="button" value="XEM THÊM DỰ ÁN →" id="btn-load-more">
+            </p>
+        </div>
 
-/* --- 3. HIỆU ỨNG TRANG CHỦ (HERO) --- */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 80px 0;
-}
+        <div id="tab-chi-tiet-du-an" class="portfolio-tab">
+            <p><a href="#" onclick="switchTab('du-an'); return false;"><font color="black">← Quay lại danh sách dự án</font></a></p>
+            <h1 align="center">CHI TIẾT DỰ ÁN</h1>
+            
+            <table width="100%" border="0" cellspacing="15" cellpadding="0">
+                <tr valign="top">
+                    <td width="35%">
+                        <h2>TÊN DỰ ÁN</h2>
+                        <p><font color="gray">React • Node.js • MongoDB • 2026</font></p>
+                        <hr color="#eee">
+                        <h3>GIỚI THIỆU</h3>
+                        <p><font color="#444">Đây là mô tả chi tiết về dự án. Dự án được xây dựng nhằm giải quyết bài toán cụ thể và mang lại giá trị cho người dùng.</font></p>
+                        <hr color="#eee">
+                        <h3>TÍNH NĂNG NỔI BẬT</h3>
+                        <ul>
+                            <li>Tính năng nổi bật số 1</li>
+                            <li>Tính năng nổi bật số 2</li>
+                            <li>Tính năng nổi bật số 3</li>
+                            <li>Tính năng nổi bật số 4</li>
+                        </ul>
+                    </td>
 
-.hero-text h2 {
-    font-size: 45px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid black; /* Hiệu ứng đánh máy */
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-    width: fit-content;
-}
+                    <td width="40%" align="center">
+                        <img src="https://via.placeholder.com/450x300" id="img-detail-main" width="100%">
+                        <h4 align="left">KẾT QUẢ</h4>
+                        <p align="left"><font color="#555">Dự án đã giúp cải thiện hiệu quả công việc và mang lại trải nghiệm tốt hơn cho người dùng.</font></p>
+                    </td>
 
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: black } }
+                    <td width="25%" class="slider-box" align="center">
+                        <h4>HÌNH ẢNH DỰ ÁN</h4>
+                        <table border="0" cellspacing="5" cellpadding="0">
+                            <tr>
+                                <td><button><b>&lt;</b></button></td>
+                                <td><img src="https://via.placeholder.com/80" id="thumb-img"></td>
+                                <td><img src="https://via.placeholder.com/80" id="thumb-img"></td>
+                                <td><button><b>&gt;</b></button></td>
+                            </tr>
+                        </table>
+                        <br><br>
+                        <table width="100%" border="0" cellspacing="5">
+                            <tr>
+                                <td bgcolor="black" align="center" height="40" id="btn-demo"><a href="#" style="text-decoration:none;"><font color="white"><b>XEM DEMO 🔗</b></font></a></td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#eee" align="center" height="40" id="btn-source" style="border:1px solid #ccc;"><a href="#" style="text-decoration:none;"><font color="black"><b>XEM SOURCE CODE</b></font></a></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-.avatar {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    transition: var(--transition-smooth);
-    filter: grayscale(100%); /* Ảnh xám ban đầu */
-}
+        <div id="tab-lien-he" class="portfolio-tab">
+            <h1 align="center">LIÊN HỆ</h1>
+            <table width="100%" border="0" cellspacing="15" cellpadding="0">
+                <tr valign="top">
+                    <td width="50%">
+                        <h3>THÔNG TIN LIÊN HỆ</h3>
+                        <table width="100%" border="0" cellspacing="10" cellpadding="10">
+                            <tr>
+                                <td class="contact-info-block" width="50%">📧 <b>Email</b><br><font size="2" color="gray">email@gmail.com</font></td>
+                                <td class="contact-info-block" width="50%">📞 <b>Số điện thoại</b><br><font size="2" color="gray">+123 555 5899</font></td>
+                            </tr>
+                            <tr>
+                                <td class="contact-info-block">📍 <b>Địa chỉ</b><br><font size="2" color="gray">Nha Trang, Khánh Hòa, Vietnam</font></td>
+                                <td class="contact-info-block">🌐 <b>Website</b><br><font size="2" color="gray">www.example.com</font></td>
+                            </tr>
+                        </table>
+                    </td>
 
-.avatar:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05) rotate(3deg); /* Phóng to và xoay nhẹ */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
+                    <td width="50%">
+                        <h3>GỬI TIN NHẮN</h3>
+                        <table width="100%" border="0" cellspacing="5" cellpadding="5">
+                            <tr>
+                                <td><input type="text" placeholder="Họ và tên" id="input-field" width="100%"></td>
+                                <td><input type="text" placeholder="Tiêu đề" id="input-field" width="100%"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><textarea placeholder="Nội dung tin nhắn" id="text-area-field" rows="4"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" bgcolor="black" align="center" id="btn-submit-message">
+                                    <font color="white"><b>GỬI TIN NHẮN</b></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            
+            <br>
+            <table width="100%" bgcolor="#e5e5e5" border="0" cellspacing="0" cellpadding="30" id="mock-map">
+                <tr>
+                    <td align="center">
+                        <font size="5" color="#333">📍 <b>BẢN ĐỒ KHU VỰC NHA TRANG</b></font><br>
+                        <font size="2" color="gray">(Mô phỏng vị trí bản đồ tích hợp)</font>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-/* --- 4. KỸ NĂNG & DỊCH VỤ --- */
-.service-card {
-    border: 1px solid var(--border);
-    padding: 40px;
-    border-radius: 15px;
-    transition: var(--transition-smooth);
-}
+    </div>
 
-.service-card:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-15px);
-}
+    <footer id="main-footer">
+        <table width="100%" border="0" cellspacing="0" cellpadding="10">
+            <tr>
+                <td align="center">
+                    <font color="white" size="2">&copy; 2026 Lê Phạm Trung Hiếu. All rights reserved. Hướng dẫn bởi Thầy Trần Ngọc Minh.</font>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <font color="white">🌐 Facebook &nbsp;|&nbsp; 💻 GitHub &nbsp;|&nbsp; 👔 LinkedIn</font>
+                </td>
+            </tr>
+        </table>
+    </footer>
 
-/* Hiệu ứng chạy thanh Progress khi cuộn tới */
-.progress-fill {
-height: 100%;
-    background: var(--primary);
-    border-radius: 10px;
-    width: 0; /* Bắt đầu từ 0 */
-    transition: width 1.5s cubic-bezier(1, 0, 0, 1);
-}
+    <script>
+        // 1. HÀM TỰ ĐỘNG ÉP KIỂU STYLE TRỰC TIẾP LÊN PHẦN TỬ (THAY THẾ TOÀN BỘ CSS PHẲNG)
+        function applyStyles() {
+            // Định dạng body thuần túy toàn bộ trang
+            document.body.style.margin = "0";
+            document.body.style.padding = "0";
+            document.body.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            document.body.style.backgroundColor = "#fafafa";
+            document.body.style.color = "#000000";
+            document.body.style.overflowX = "hidden";
 
-/* --- 5. DỰ ÁN (PROJECTS) --- */
-.project-item {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-}
+            // Định dạng thanh Header điều hướng
+            const header = document.getElementById("main-header");
+            header.style.backgroundColor = "#ffffff";
+            header.style.borderBottom = "1px solid #e0e0e0";
+            header.style.position = "sticky";
+            header.style.top = "0";
+            header.style.zIndex = "1000";
 
-.project-img {
-    height: 180px;
-    background: #eee;
-    transition: var(--transition-smooth);
-}
+            // Định dạng vùng nội dung chính
+            const container = document.getElementById("content-container");
+            container.style.maxWidth = "1200px";
+            container.style.margin = "0 auto";
+            container.style.padding = "40px 20px";
+            container.style.minHeight = "70vh";
 
-.project-item:hover .project-img {
-    transform: scale(1.1); /* Phóng to ảnh khi hover */
-}
+            // Định dạng cấu trúc cho tất cả các Tab
+            const tabs = document.querySelectorAll(".portfolio-tab");
+            tabs.forEach(tab => {
+                tab.style.display = "none"; 
+                tab.style.opacity = "0";
+                tab.style.transform = "translateY(20px)";
+                tab.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            });
 
-.project-item::before {
-    content: 'Xem dự án';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition-smooth);
-    z-index: 1;
-}
+            // Định dạng các thẻ bo góc (Dịch vụ, Thông tin)
+            const cards = document.querySelectorAll(".service-card, .info-card, .contact-info-block");
+            cards.forEach(card => {
+                card.style.border = "1px solid #e0e0e0";
+                card.style.borderRadius = "12px";
+                card.style.backgroundColor = "#ffffff";
+                card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+                card.style.padding = "20px";
+            });
 
-.project-item:hover::before {
-    opacity: 1;
-}
+            // Định dạng Khung Dự án nổi bật tại Trang chủ
+            const featureBox = document.querySelector(".feature-box");
+            if(featureBox) {
+                featureBox.style.border = "1px solid #e0e0e0";
+                featureBox.style.borderRadius = "16px";
+                featureBox.style.backgroundColor = "#ffffff";
+                featureBox.style.padding = "25px";
+            }
 
-/* --- 6. LIÊN HỆ (CONTACT) --- */
-input, textarea {
-    transition: var(--transition-smooth);
-    border: 1px solid #ddd;
-}
+            // Định dạng các item trong danh sách lưới dự án
+            const projectItems = document.querySelectorAll(".project-item");
+            projectItems.forEach(item => {
+                item.style.border = "1px solid #e0e0e0";
+                item.style.borderRadius = "10px";
+                item.style.padding = "12px";
+                item.style.backgroundColor = "#ffffff";
+                item.style.cursor = "pointer";
+                item.style.transition = "transform 0.3s ease";
+                
+                // Hiệu ứng Hover thu phóng nhẹ khi di chuột vào từng dự án
+                item.onmouseover = () => item.style.transform = "scale(1.03)";
+                item.onmouseout = () => item.style.transform = "scale(1)";
+            });
 
-input:focus, textarea:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transform: translateX(5px); /* Nhích nhẹ khi chọn ô nhập */
-}
+            // Định dạng các nút bấm thủ công
+            const buttons = ["btn-view-project", "btn-contact-me", "btn-detail-trigger", "btn-submit-message", "btn-load-more"];
+            buttons.forEach(id => {
+                const btn = document.getElementById(id);
+                if(btn) {
+                    btn.style.cursor = "pointer";
+                    btn.style.borderRadius = "6px";
+                    btn.style.padding = "10px 15px";
+                    btn.style.textAlign = "center";
+                    btn.style.transition = "background-color 0.2s";
+                }
+            });
 
-.btn-send {
-    transition: var(--transition-smooth);
-    position: relative;
-    overflow: hidden;
-}
+            // Bo tròn hình ảnh đại diện (Avatar) hình tròn theo đúng thiết kế UI
+            const avatarHome = document.getElementById("avatar-home");
+            if(avatarHome) avatarHome.style.borderRadius = "50%";
+            const avatarAbout = document.getElementById("avatar-about");
+            if(avatarAbout) avatarAbout.style.borderRadius = "50%";
 
-.btn-send:hover {
-    letter-spacing: 2px; /* Chữ giãn ra khi hover */
-    background: #333;
-}
+            // Các ô nhập liệu liên hệ
+            const inputs = document.querySelectorAll("#input-field, #text-area-field");
+            inputs.forEach(input => {
+                input.style.width = "100%";
+                input.style.padding = "10px";
+                input.style.border = "1px solid #ccc";
+                input.style.borderRadius = "6px";
+                input.style.boxSizing = "border-box";
+            });
+
+            // Bản đồ giả lập
+            const mockMap = document.getElementById("mock-map");
+            if(mockMap) mockMap.style.borderRadius = "12px";
+
+            // Định dạng Footer chân trang màu đen tuyền sang trọng
+            const footer = document.getElementById("main-footer");
+            footer.style.backgroundColor = "#111111";
+            footer.style.padding = "25px 0";
+            footer.style.marginTop = "50px";
+        }
+
+        // 2. HÀM CHUYỂN ĐỔI QUA LẠI GIỮA CÁC TAB CÓ HIỆU ỨNG SMOOTH ANIMATION
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll(".portfolio-tab");
+            
+            // Ẩn mượt mà tab cũ đi trước
+            tabs.forEach(tab => {
+                if (tab.style.display === "block") {
+                    tab.style.opacity = "0";
+                    tab.style.transform = "translateY(20px)";
+                    setTimeout(() => {
+                        tab.style.display = "none";
+                    }, 300); // Đợi hiệu ứng ẩn hoàn tất
+                }
+            });
+
+            // Hiển thị mượt mà tab mới lên sau
+            setTimeout(() => {
+                const targetTab = document.getElementById("tab-" + tabId);
+                if (targetTab) {
+                    targetTab.style.display = "block";
+                    // Khởi chạy animation mượt
+                    setTimeout(() => {
+                        targetTab.style.opacity = "1";
+                        targetTab.style.transform = "translateY(0)";
+                    }, 50);
+                }
+            }, 350);
+
+            // Tự động cuộn mượt lên đầu trang khi bấm chuyển tab
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // KHI TRANG TẢI XONG: Chạy cấu hình Style và mở mặc định Tab Trang Chủ đầu tiên
+        window.onload = function() {
+            applyStyles();
+            switchTab('trang-chu');
+        };
+    </script>
+</body>
+</html>
