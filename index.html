@@ -506,5 +506,200 @@
             switchTab('trang-chu');
         };
     </script>
+function applyStyles() {
+    // 1. Định dạng chung cho trang
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.fontFamily = "'Segoe UI', Roboto, sans-serif";
+    document.body.style.backgroundColor = "#f8f9fa";
+    document.body.style.color = "#212529";
+    document.body.style.overflowX = "hidden";
+
+    // 2. Định dạng Navbar dính thông minh (Sticky Navbar)
+    const header = document.getElementById("main-header");
+    header.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
+    header.style.backdropFilter = "blur(10px)";
+    header.style.borderBottom = "1px solid #e9ecef";
+    header.style.position = "sticky";
+    header.style.top = "0";
+    header.style.zIndex = "1000";
+    header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.02)";
+
+    // Định dạng hiệu ứng hover nhẹ cho các liên kết trên Navbar
+    const navLinks = header.querySelectorAll("a");
+    navLinks.forEach(link => {
+        link.style.textDecoration = "none";
+        link.style.transition = "all 0.3s ease";
+        link.onmouseover = () => { link.style.transform = "scale(1.05)"; link.style.opacity = "0.7"; };
+        navLinks.forEach(l => l.onmouseout = () => { l.style.transform = "scale(1)"; l.style.opacity = "1"; });
+    });
+
+    // 3. Định dạng Vùng chứa chính (Main Container)
+    const container = document.getElementById("content-container");
+    container.style.maxWidth = "1200px";
+    container.style.margin = "0 auto";
+    container.style.padding = "50px 20px";
+    container.style.minHeight = "75vh";
+
+    // 4. Định dạng cấu trúc ẩn/hiện mặc định cho tất cả các Tab
+    const tabs = document.querySelectorAll(".portfolio-tab");
+    tabs.forEach(tab => {
+        tab.style.display = "none"; 
+        tab.style.opacity = "0";
+        tab.style.transform = "translateY(30px)";
+        tab.style.transition = "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
+    });
+
+    // 5. SIÊU HIỆU ỨNG HOVER CHO CÁC KHỐI THÔNG TIN (Cards & Project Items)
+    const cards = document.querySelectorAll(".service-card, .info-card, .contact-info-block, .project-item, .feature-box");
+    cards.forEach(card => {
+        card.style.border = "1px solid #e9ecef";
+        card.style.borderRadius = "16px";
+        card.style.backgroundColor = "#ffffff";
+        card.style.padding = "24px";
+        card.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.02)";
+        card.style.transition = "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
+        
+        if (card.classList.contains("project-item")) {
+            card.style.cursor = "pointer";
+        }
+
+        // Tạo hiệu ứng tương tác động cực mượt khi di chuột vào (Hover In)
+        card.onmouseover = () => {
+            card.style.transform = "translateY(-8px)";
+            card.style.boxShadow = "0 12px 30px rgba(0, 0, 0, 0.08)";
+            card.style.borderColor = "#000000";
+        };
+        // Trả về trạng thái cũ khi di chuột ra ngoài (Hover Out)
+        card.onmouseout = () => {
+            card.style.transform = "translateY(0)";
+            card.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.02)";
+            card.style.borderColor = "#e9ecef";
+        };
+    });
+
+    // 6. HIỆU ỨNG ĐÀN HỒI CHO NÚT BẤM (Button Micro-interactions)
+    const buttons = ["btn-view-project", "btn-contact-me", "btn-detail-trigger", "btn-submit-message", "btn-load-more", "btn-demo", "btn-source"];
+    buttons.forEach(id => {
+        const btn = document.getElementById(id);
+        if(btn) {
+            btn.style.cursor = "pointer";
+            btn.style.borderRadius = "8px";
+            btn.style.padding = "12px 24px";
+            btn.style.textAlign = "center";
+            btn.style.transition = "all 0.2s ease";
+            
+            // Hiệu ứng lún nút khi nhấn chuột xuống (Click)
+            btn.onmousedown = () => {
+                btn.style.transform = "scale(0.95)";
+            };
+            btn.onmouseup = () => {
+                btn.style.transform = "scale(1.02)";
+            };
+            btn.onmouseover = () => {
+                btn.style.transform = "scale(1.02)";
+                btn.style.filter = "brightness(1.2)";
+            };
+            btn.onmouseout = () => {
+                btn.style.transform = "scale(1)";
+                btn.style.filter = "brightness(1)";
+            };
+        }
+    });
+
+    // 7. Làm đẹp Avatar và bo tròn hoàn hảo
+    const avatars = [document.getElementById("avatar-home"), document.getElementById("avatar-about")];
+    avatars.forEach(avt => {
+        if(avt) {
+            avt.style.borderRadius = "50%";
+            avt.style.border = "4px solid #ffffff";
+            avt.style.boxShadow = "0 8px 20px rgba(0,0,0,0.1)";
+            avt.style.transition = "transform 0.5s ease";
+            avt.onmouseover = () => avt.style.transform = "rotate(5deg) scale(1.05)";
+            avt.onmouseout = () => avt.style.transform = "rotate(0deg) scale(1)";
+        }
+    });
+
+    // 8. Định dạng các ô nhập liệu Form mịn màng hơn
+    const inputs = document.querySelectorAll("#input-field, #text-area-field");
+    inputs.forEach(input => {
+        input.style.width = "100%";
+        input.style.padding = "14px";
+        input.style.border = "1px solid #dee2e6";
+        input.style.borderRadius = "8px";
+        input.style.boxSizing = "border-box";
+        input.style.backgroundColor = "#f8f9fa";
+        input.style.transition = "all 0.3s ease";
+        
+        // Đổi màu viền khi người dùng click vào ô nhập liệu (Focus)
+        input.onfocus = () => {
+            input.style.backgroundColor = "#ffffff";
+            input.style.borderColor = "#000000";
+            input.style.outline = "none";
+        };
+        input.onblur = () => {
+            input.style.backgroundColor = "#f8f9fa";
+            input.style.borderColor = "#dee2e6";
+        };
+    });
+
+    // 9. Làm đẹp bản đồ giả lập và chân trang
+    const mockMap = document.getElementById("mock-map");
+    if(mockMap) mockMap.style.borderRadius = "16px";
+
+    const footer = document.getElementById("main-footer");
+    footer.style.backgroundColor = "#1a1d20";
+    footer.style.padding = "35px 0";
+    footer.style.marginTop = "60px";
+}
+
+// 3. NÂNG CẤP HÀM CHUYỂN TAB TÍCH HỢP CHẠY TIẾN TRÌNH KỸ NĂNG TỰ ĐỘNG (SKILLS ANIMATION)
+function switchTab(tabId) {
+    const tabs = document.querySelectorAll(".portfolio-tab");
+    
+    tabs.forEach(tab => {
+        if (tab.style.display === "block") {
+            tab.style.opacity = "0";
+            tab.style.transform = "translateY(20px)";
+            setTimeout(() => {
+                tab.style.display = "none";
+            }, 300);
+        }
+    });
+
+    setTimeout(() => {
+        const targetTab = document.getElementById("tab-" + tabId);
+        if (targetTab) {
+            targetTab.style.display = "block";
+            setTimeout(() => {
+                targetTab.style.opacity = "1";
+                targetTab.style.transform = "translateY(0)";
+                
+                // Nếu người dùng mở tab "Giới thiệu", kích hoạt hiệu ứng thanh Progress Bar chạy mượt từ 0%
+                if (tabId === 'gioi-thieu') {
+                    animateSkills();
+                }
+            }, 50);
+        }
+    }, 350);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// 4. HÀM TẠO HIỆU ỨNG THANH KỸ NĂNG CHẠY TỪ ĐỘNG (DYNAMICS PROGRESS BARS)
+function animateSkills() {
+    const skillBars = document.querySelectorAll("#tab-gioi-thieu table table td[bgcolor='black']");
+    const targets = [90, 85, 90, 80]; // Tương ứng thứ tự phần trăm của các kỹ năng trong HTML
+    
+    skillBars.forEach((bar, index) => {
+        bar.style.width = "0%";
+        bar.style.transition = "none"; // Reset tiến trình về 0 trước
+        
+        setTimeout(() => {
+            bar.style.transition = "width 1.5s cubic-bezier(0.1, 1, 0.1, 1)"; // Thiết lập gia tốc mượt
+            bar.style.width = targets[index] + "%";
+        }, 100);
+    });
+}
 </body>
 </html>
